@@ -1,0 +1,10 @@
+## Interface: 30300
+## Title: Broker: PVP Timer
+## Notes: PVP Timer feed for any Broker display
+## Author: durcyn
+
+LibStub.lua
+CallbackHandler-1.0.lua
+LibDataBroker-1.1.lua
+
+Broker_PVPTimer.lua
