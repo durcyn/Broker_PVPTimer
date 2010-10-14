@@ -39,19 +39,23 @@ f:SetScript("OnEvent", function()
 	obj.icon = format(iconpath, icon)
 end)
 
+local counter = 0
 f:SetScript("OnUpdate", function(self, elapsed)
-	if time == 0 then
-		obj.text = "On"
-	elseif time then
-		time = time - elapsed*1000
-		if time < 0 then
-			time = nil
+	counter = counter + elapsed
+	if counter >= 1 then
+		if time then
+			if time < 0 then
+				time = nil
+			elseif time == 0 then
+				obj.text = "On"
+			elseif time then
+				time = time - elapsed*1000
+				local fmt, digit = SecondsToTimeAbbrev(floor(time/1000))
+				obj.text = format(fmt, digit)
+			end
 		else
-			local fmt, digit = SecondsToTimeAbbrev(floor(time/1000))
-			obj.text = format(fmt, digit)
+			obj.text = "Off"
 		end
-	else
-		obj.text = "Off"
 	end
 end)
 

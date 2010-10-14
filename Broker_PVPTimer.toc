@@ -1,4 +1,4 @@
-## Interface: 30300
+## Interface: 40000
 ## Title: Broker: PVP Timer
 ## Notes: PVP Timer feed for any Broker display
 ## Author: durcyn
